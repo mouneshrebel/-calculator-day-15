@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" class="icon" type="icon" href="cal_icon.jpg">
+    <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+  <u style=" color: rgb(171, 199, 199);"><h1>Basic Calculator</h1></u>
+    <div class="container">
+      <div>
+        <img class="cat" src="cal_gif.gif" alt="#">
+      </div>
+        <div class="Calculator">
+              <input type="text" placeholder="0" id="inputvalue" >
+              <button onclick="clearall()">cl</button>
+              <button onclick="del()">del</button>
+              <button onclick="display('%')">%</button>
+              <button onclick="display('/')">/</button>
+              <button onclick="display('7')">7</button>
+              <button onclick="display('8')">8</button>
+              <button onclick="display('9')">9</button>
+              <button onclick="display('*')">*</button>
+              <button onclick="display('4')">4</button>
+              <button onclick="display('5')">5</button>
+              <button onclick="display('6')">6</button>
+              <button onclick="display('-')">-</button>
+              <button onclick="display('1')">1</button>
+              <button onclick="display('2')">2</button>
+              <button onclick="display('3')">3</button>
+              <button onclick="display('+')">+</button>
+              <button onclick="display('.')">.</button>
+              <button onclick="display('0')">0</button>
+              <button onclick="cal()" class="equal">=</button>
+        </div>
+    </div>
+
+    <script>
+        
+   let inputscreen = document.getElementById('inputvalue');
+  function display (num) {
+    inputscreen.value += num;
+  }
+
+  function cal () {
+    try {
+        inputscreen.value = eval(inputscreen.value);
+    }
+    catch(err) {
+         alert('Enter the  valid calculation !')
+    }
+  }
+
+   function clearall() {
+    inputscreen.value = '';
+   }  
+  
+
+   function del() {
+    inputscreen.value = inputscreen.value.slice(0,-1)
+   }
+  
+    </script>
+</body>
+</html>
